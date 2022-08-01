@@ -8,8 +8,6 @@ from discord_webhook import DiscordWebhook, DiscordEmbed
 load_dotenv()
 
 # Declare variables
-TOKEN = os.getenv('DISCORD_TOKEN')
-GUILD = os.getenv('DISCORD_GUILD') # Discord Channel Name
 WEBHOOK_URL = os.getenv('DISCORD_WEBHOOK')
 subreddits = ['buildapcsales'] # Can add multiple subreddits
 keywords = ['RTX','SSD'] # Can add multiple keywords
