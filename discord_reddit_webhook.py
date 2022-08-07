@@ -2,6 +2,7 @@ import os
 import requests
 import datetime
 import json
+import logging
 from dotenv import load_dotenv
 from discord_webhook import DiscordWebhook, DiscordEmbed
 
@@ -12,6 +13,12 @@ WEBHOOK_URL = os.getenv('DISCORD_WEBHOOK')
 subreddits = ['buildapcsales'] # Can add multiple subreddits
 keywords = ['RTX','SSD'] # Can add multiple keywords
 exclude_sites = ['microcenter'] # Can add multiple exclusion sites
+
+logging.basicConfig(filename='app.log',
+                    filemode='a',
+                    format='%(asctime)s %(name)s %(levelname)s: %(message)s',
+                    datefmt='[%Y-%m-grep |%H - %H:%M:%S] ',
+                    level=logging.DEBUG)
 
 # Creating RedditPost Class
 class RedditPost:  
@@ -80,3 +87,5 @@ if __name__ == "__main__":
     #Write to DB. Also we are only keeping lastest 100 posts
     with open(os.path.abspath(os.path.dirname(__file__)) + '/db.json', 'w') as outfile:
         json.dump(db[-100:], outfile, indent=2)
+
+    logging.info("Script finished running")
