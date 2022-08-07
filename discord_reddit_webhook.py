@@ -16,8 +16,8 @@ exclude_sites = ['microcenter'] # Can add multiple exclusion sites
 
 logging.basicConfig(filename='app.log',
                     filemode='a',
-                    format='%(asctime)s %(name)s %(levelname)s: %(message)s',
-                    datefmt='[%Y-%m-%d - %H:%M:%S] ',
+                    format='[%(asctime)s.%(msecs)03d] %(name)s %(levelname)s: %(message)s',
+                    datefmt='%Y-%m-%d - %H:%M:%S',
                     level=logging.DEBUG)
 
 # Creating RedditPost Class
