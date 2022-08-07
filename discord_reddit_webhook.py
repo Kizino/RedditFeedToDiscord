@@ -88,4 +88,4 @@ if __name__ == "__main__":
     with open(os.path.abspath(os.path.dirname(__file__)) + '/db.json', 'w') as outfile:
         json.dump(db[-100:], outfile, indent=2)
 
-    logging.info("Script finished running")
+    logging.info("Script finished running.")
